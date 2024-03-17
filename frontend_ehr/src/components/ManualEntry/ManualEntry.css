@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.bodymain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('../../assests/6903344.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
+.basecontainer {
+    margin: 20px; 
+    width: 95%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.entry_container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    width: 100%;
+}
+
+#heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.entry_details label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.entry_details input[type="text"],
+.select_disease,
+.entry_details input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+}
+
+.buttonbtr {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    width: 100%; 
+}
+
+.buttonbtr:hover {
+    background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+    .basecontainer {
+        margin: 10px; 
+        width: 100%; 
+    }
+
+    .container {
+        padding: 10px; 
+    }
+
+    input[type="text"],
+    select,
+    input[type="date"] {
+        padding: 8px; 
+    }
+
+    .buttonbtr {
+        padding: 8px 16px; 
+    }
+}

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('../../assests/6903344.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+
+.data-service-provider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.service-provider-container {
+  background-color: #f9f9f9;
+  padding: 30px; 
+  border-radius: 12px; 
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); 
+  width: 80%;
+  max-width: 600px; 
+}
+
+.heading {
+  margin-bottom: 20px;
+}
+
+.heading h2 {
+  font-size: 24px;
+}
+
+.service-provider-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-provider-label {
+  margin-bottom: 10px; 
+}
+
+.service-provider-input,
+.service-provider-select {
+  margin-bottom: 15px; 
+  padding: 10px; 
+  width: 100%;
+}
+
+.service-provider-button {
+  width: 100%;
+  margin-top: auto;
+  background-color: #3462ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.service-provider-button:hover {
+  background-color: #0056b3;
+}
+
+.service-provider-input:focus,
+.service-provider-select:focus {
+  outline: none;
+  border: 1px solid #007bff;
+}
+
+
+@media screen and (max-width: 768px) {
+  .service-provider-container {
+    width: 90%; 
+    padding: 20px; 
+  }
+
+  .heading h2 {
+    font-size: 20px; 
+  }
+
+  .service-provider-input,
+  .service-provider-select {
+    padding: 8px; 
+  }
+
+  .service-provider-button {
+    padding: 8px 0; 
+    font-size: 0.9rem; 
+  }
+}

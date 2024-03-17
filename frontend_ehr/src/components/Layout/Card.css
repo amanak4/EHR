@@ -1,0 +1,67 @@
+/* Card.css */
+
+/* Import Montserrat font family */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.custom-card {
+  width: 23rem;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.351);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font family */
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+}
+.card-text-price {
+    font-weight: bold;
+    font-size: 1.1rem; 
+  }
+
+.custom-card-img {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+}
+
+.custom-card .card-body {
+  padding: 1.25rem;
+  flex-grow: 1;
+}
+
+.custom-card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.custom-card .card-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.custom-button {
+  width: 100%;
+  margin-top: auto;
+  background-color: #3462ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.custom-button:hover {
+  background-color: #1e3dd3;
+}

@@ -1,0 +1,171 @@
+/* Navbar container */
+nav{
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+}
+
+.nav_container {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0,0,0,0.3);
+   color: #fff;
+   height: 1.5rem;
+  }
+
+
+/* Logo */
+.logo img {
+  width: 50px;
+  margin-top: 5px;
+  max-height: 50px;
+  border-radius: 50%; /* Adjust the width of the logo image */
+}
+
+ul div{
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-content {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-content li {
+  margin: 0;
+  margin-right: 20px;
+  height: 17px;
+  
+}
+
+.navbar-content li:last-child {
+  margin-right: 0;
+}
+
+.navbar-content li a{
+  margin: 0;
+}
+/* Dropdown menu */
+.dropDown {
+  display: none;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5); /* Change the background color as needed */
+  /* border: 1px solid #fff;  */
+   padding: 10px;
+  z-index: 1;
+}
+
+.dropDown li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.viewReport:hover .dropDown {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Authorization section */
+.authorization button {
+  color:white; /* Change the text color as needed */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+li a{
+  /* text-decoration: none; */
+  color: white;
+}
+
+.login-signup{
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border-radius:20px;
+}
+
+.login-signup a{
+  color: white;
+  margin-right:7px;
+  margin-left: 4px;
+  margin-bottom:0;
+  margin-top: 0;
+}
+.authorization button:hover {
+  background-color: #ddd; /* Change the background color on hover as needed */
+}
+
+/* Hamburger menu icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  ul div{
+    justify-content: start;
+    flex-direction:column;
+  }
+  .navbar-content {
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    background-color:rgba(0,0,0,0.3) ;/* Change the background color as needed */
+    padding: 10px;
+    box-sizing: border-box;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+    max-height:0;
+    padding: 0;
+  }
+
+  .viewReport{
+    padding: 0;
+    margin: 0;
+    height: 2px;
+    margin-bottom: 25px;
+  }
+
+  .navbar-content.show {
+    max-height:300px; /* Adjust the maximum height as needed */
+  }
+
+  .login-signup{
+    margin-bottom: 55px;
+  }
+
+  .login-signup a{
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+  .navbar-content li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .signup{
+  }
+  .authorization {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
