@@ -9,8 +9,11 @@ import { getLipid, getSugar, getUrine, gethearthealth } from "./controllers/get-
 import { IsAuthorized } from "./middleware/IsAuthorized.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { config } from "dotenv";
+config();
 const app = express();
-
+const PORT = process.env.PORT || 4000;
+const DATABASE_URL = process.env.DATABASE_URL;
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors({
@@ -41,11 +44,11 @@ app.use((req, res, next) => {
 
 mongoose
   .connect(
-    `mongodb+srv://22je0094:6fUKORytz4DEB9cr@cluster0.rz6z7c1.mongodb.net/EHR?retryWrites=true&w=majority&appName=Cluster0`
+    DATABASE_URL
   )
   .then(() => {
     console.log("Server Running");
-    app.listen(4000);
+    app.listen(PORT);
   })
   .catch(err => {
     console.log(err);
