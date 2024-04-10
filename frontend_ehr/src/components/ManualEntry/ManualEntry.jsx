@@ -54,7 +54,7 @@ const postManualEntry = async (e) => {
       postData = {
         fastingSugar: fastingSugarData,
         randomSugar: randomSugarData,
-        email: email,
+        name: email,
         date: testDate
       };
       break;
@@ -64,7 +64,7 @@ const postManualEntry = async (e) => {
         systolicBP: systolicBPData,
         diastolicBP: diastolicBPData,
         heartbeat: heartBeatData,
-        email: email,
+        name: email,
         date: testDate
       };
       break;
@@ -76,7 +76,7 @@ const postManualEntry = async (e) => {
         ketone: urineKetone,
         glucose: urineGlucose,
         bilirubin: urineBilirubin,
-        email: email,
+        name: email,
         date: testDate
       };
       break;
@@ -87,7 +87,7 @@ const postManualEntry = async (e) => {
         ldlCholesterol: ldlCholesterol,
         hdlCholesterol: hdlCholesterol,
         tryglycerides: triglycerides,
-        email: email,
+        name: email,
         date: testDate
       };
       break;

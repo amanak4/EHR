@@ -30,7 +30,7 @@ function ServiceProvider() {
     const randomBp=bp[Math.floor(Math.random() * bp.length)].data;
     const randomUrine=urine[Math.floor(Math.random() * urine.length)].data;
        
-
+ console.log("randomurine",randomUrine);
 //     const randomIndex = Math.floor(Math.random() * lipids.length); // Get a random index
 // const randomLipid = lipids[randomIndex].data;
 
@@ -46,14 +46,14 @@ randomLipid.forEach(lipidEntry => {
     ldlCholesterol: lipidEntry.ldlCholesterol,
     hdlCholesterol: lipidEntry.hdlCholesterol,
     tryglycerides: lipidEntry.Triglycerides, // Assuming the key is "Triglycerides" in the data
-    email: email,
+    name: email,
     date: lipidEntry.date // Assuming the key is "date" in the data
   };
 
   // const datamunna=JSON.stringify(postData);
 
 const fxndata=async()=>{
-  const response= await axios.post("http://localhost:4000/lipid",postData,{withCredentials:true,
+  const response= await axios.post(`http://localhost:4000/lipid`,postData,{withCredentials:true,
   headers:{
     "Content-Type":"application/json",
   },});
@@ -72,12 +72,12 @@ randomBp.forEach(bpEntry => {
     systolicBP: bpEntry.systolic_bp,
     diastolicBP: bpEntry.diastolic_bp,
     heartbeat: bpEntry.heartbeat,
-    email: email,
+    name: email,
     date: bpEntry.date
   };
 
   const fxndata=async()=>{
-    await axios.post("http://localhost:4000/hearthealth", postData)
+    await axios.post(`http://localhost:4000/hearthealth`, postData)
     .then(response => {
       console.log('Blood pressure (bp) data posted successfully:', response.data);
     })
@@ -101,11 +101,11 @@ randomUrine.forEach(urineEntry => {
     ketone: urineEntry.Ketone,
     glucose: urineEntry.Glucose,
     bilirubin: urineEntry.Bilirubin,
-    email: email,
+    name: email,
     date: urineEntry.date
   };
 const fxndata=async()=>{
-  await axios.post("http://localhost:4000/urine", postData)
+  await axios.post(`http://localhost:4000/urine`, postData)
     .then(response => {
       console.log('Urine data posted successfully:', response.data);
     })
@@ -126,11 +126,11 @@ randomSugar.forEach(sugarEntry => {
   const postData = {
     fastingSugar: sugarEntry.fastingSugar,
     randomSugar: sugarEntry.randomSugar,
-    email: email,
+    name: email,
     date: sugarEntry.date
   };
 const fxndata=async()=>{
- await  axios.post("http://localhost:4000/sugar", postData)
+ await  axios.post(`http://localhost:4000/sugar`, postData)
     .then(response => {
       console.log('Sugar data posted successfully:', response.data);
     })

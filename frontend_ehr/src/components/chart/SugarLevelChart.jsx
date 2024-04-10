@@ -30,11 +30,16 @@ const SugarLevelChart = () => {
       }
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:4000/sugar", { withCredentials: true });
+                const response = await axios.get(`http://localhost:4000/sugar/${user.name}`, { withCredentials: true });
                 console.log("data",response.data.data);
-                const { FastingSugar, RandomSugar, date, name } = response.data.data;
-                setFastingSugar(FastingSugar);
-                setRandomSugar(RandomSugar);
+                
+                const { fastingSugar, randomSugar, date, name } = response.data.data;
+                if(!fastingSugar || !randomSugar || !date){
+                    toast.error("No data found");
+                    navigateTo('/');
+                   }
+                setFastingSugar(fastingSugar);
+                setRandomSugar(randomSugar);
                 setDate(date);
                 setName(name);
             } catch (error) {

@@ -53,9 +53,9 @@ try{
    
    
 }catch(error){
-  // console.log("afghj",error.response.data.message);
-  // console.log(error);
-// 
+  console.log("afghj",error.response.data.message);
+  console.log(error);
+
   const errorMessageRegex = /<pre>(.*?)(?=<br>)/s;
 const match = errorMessageRegex.exec(error.response.data);
 toast.error(match[1].trim());

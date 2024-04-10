@@ -6,10 +6,15 @@
     gap: 20px;  
 }
 .book_container{
+    color: white;
     font-family: 'Montserrat', sans-serif;
     padding: 2.5%;
     width:95%;
     padding-top: 80px;
+    background-image: url('../../assests/test_bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #name{
     width:98.5%;

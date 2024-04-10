@@ -32,11 +32,15 @@ const BloodPressureChart = () => {
         const fetchData = async () => {
           
             try {
-                const response = await axios.get("http://localhost:4000/hearthealth", { withCredentials: true });
-                const { Systole, Diastole, Heartbeat, date, name } = response.data.data;
-                setSystole(Systole);
-                setDiastole(Diastole);
-                setHeartBeat(Heartbeat);
+                const response = await axios.get(`http://localhost:4000/hearthealth/${user.name}`, { withCredentials: true });
+                const { systolicBP, diastolicBP, heartbeat, date, name } = response.data.data;
+                if(!systolicBP || !diastolicBP || !heartbeat || !date){
+                    toast.error("No data found");
+                    navigateTo('/');
+                }
+                setSystole(systolicBP);
+                setDiastole(diastolicBP);
+                setHeartBeat(heartbeat);
                 setDate(date);
                 setName(name);
             } catch (error) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
-// import Navbar from './components/Navbar';
-// import Carousel from './Carousel.jsx'; 
+import { FaBook, FaBookMedical, FaBookmark, FaNotesMedical, FaReceipt, FaRecordVinyl } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div className="App">
@@ -10,49 +10,33 @@ function Home() {
       <div className="top-section">
          
         <div className="background-image">
-          {/* Add your background image here */}
-        </div>
+            </div>
         <div className="description">
           <h1 id="heading">Electronic Health Report</h1>
-          <p id="content">Weprovijkerbvufebvjhbfhjv bsufhvbhjefbuefbvhjefbvyufgevjhefbvyuegvyjherbvueryfuiweakhfiuesryfike
-            neaifgvebfjwhegfhjewbfjkgfjew fjkegfhjewbfjhewgfjebfuyegchjewbvfyewfhjfveaukfcuwebcuheagfhawebfugwe
-            baewufbhjewvfyuewfhjewfyuebfwfgyuwgfjkwabcuawgfjewbfuwhfkjewbfuewgfjwebfjwdgfyuwbfHWBFUYWAJBFWEGCJWBF
-            VNDAUFGEAFGUYAEGFHJDABVUYABFJKEABFVUYDAGWABCVGEABFLHGOAHEKFBWEHGFUIE
-            WBFIWEGFIEWHKFHAWDJVBJHEBVhfebfrebf
-            jvkfrbvjrbsvjhbrjfvbjhef vjefbvjbfjbvjhw.
+          <p id="content">Electronic Health Records (EHRs) have emerged as a crucial tool in modern healthcare management, streamlining patient information, improving accessibility, and enhancing overall healthcare delivery. Our proposal aims to develop a web-based EHR application that not only securely stores vital medical information but also connects with leading diagnostic labs to seamlessly integrate test reports. Additionally, the application will feature a user-friendly dashboard presenting health vitals through progress circles and graphs, facilitating better understanding and tracking of health metrics.Our App will serve as an important health buddy which can be used to track your health , vitals , prevent ailments , and finally live a healthy life.
           </p>
         </div>
       </div>
       <div className="bottom-section">
         <div className="appointment">
           {/* Add appointment content here */}
-          <h1>Manual Entry       
-          <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="50"><path d="M240-160q-33 0-56.5-23.5T160-240q0-33 23.5-56.5T240-320q33 0 56.5 23.5T320-240q0 33-23.5 56.5T240-160Zm0-240q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm0-240q-33 0-56.5-23.5T160-720q0-33 23.5-56.5T240-800q33 0 56.5 23.5T320-720q0 33-23.5 56.5T240-640Zm240 0q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Zm240 0q-33 0-56.5-23.5T640-720q0-33 23.5-56.5T720-800q33 0 56.5 23.5T800-720q0 33-23.5 56.5T720-640ZM480-400q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm40 240v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></svg>
+         <Link to={'/ManualEntry'}> <h1>Manual Entry       
+            <FaNotesMedical />
           </h1>
-          <p>uirehuversvbebvuieavuievuibdav
-            cbudibvaevbuebvuearvbera
-            vweaivnareinvieravbiearvbiaer
-            vnaeiwvnireaviuearvbiaervie
-            vaiuvnirevnireanvireanvji
+          </Link>
+          <p>If the online EHR report access is not supported by the diagnostic lab , then the patient can manually upload the vitals which will be then processed to update the online medical profile of the patient.
           </p>
         </div>
         <div className="book-test">
+        
           {/* Add book a test content here */}
-          <h1>Book A Test</h1>
-          <p>uirehuversvbebvuieavuievuibda
-            vcbudibvaevbuebvuearvbera
-            vweaivnareinvieravbiearvbiaer
-            vnaeiwvnireaviuearvbiaervie
-            vaiuvnirevnireanvireanvji
+          <Link to={'/book-a-test'}> <h1>Book A Test <FaBook /></h1></Link>
+          <p>The App also provides a feature to book an test appointment to your designated medical service provider (diagnostic labs) and seamlessly links the results of the latest profile.
           </p>
         </div>
         <div className="lab-reports">
-          {/* Add lab reports content here */}
-          <h1>Lab Reports</h1>
-          <p>uirehuversvbebvuieavuievuibdavcbudibvaevbuebvuearvbera
-            vweaivnareinvieravbiearvbiaer
-            vnaeiwvnireaviuearvbiaervie
-            vaiuvnirevnireanvireanvji
+         <Link to={'/blood-pressure-stats'}> <h1>View Reports<FaReceipt /></h1></Link>
+          <p>Medical Vitals Tracking: Allows users to input and track essential medical vitals such as blood pressure, blood sugar levels, weight, etc.
           </p>
         </div>
       </div>

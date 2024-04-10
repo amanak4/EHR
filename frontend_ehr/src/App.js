@@ -23,27 +23,27 @@ import BookATest from './components/BookATest/BookATest.jsx';
 const App =()=>{
 const {isAuthorized,setIsAuthorized,user,setUser}=useContext(Context);
 
-// useEffect(()=>{
-//   const fetchuser =async()=>{
-//    try{ const response=await axios.get("http://localhost:4000/getuser",{withCredentials:true});
-//    console.log(response);
-//    if(response.data.message){
-//     setUser(response.data.email);
-//     setIsAuthorized(true);
-//    }else if(response.data.error){
-//     toast.error(response.data.error);
-//     setIsAuthorized(false);
-//    }
-//   }
-// catch(error){
-//     setIsAuthorized(false);
-//   }
+useEffect(()=>{
+  const fetchuser =async()=>{
+   try{ const response=await axios.get("http://localhost:4000/getuser",{withCredentials:true});
+   console.log(response);
+   if(response.data.message){
+    setUser(response.data.user);
+    setIsAuthorized(true);
+   }else if(response.data.error){
+    toast.error(response.data.error);
+    setIsAuthorized(false);
+   }
+  }
+catch(error){
+    setIsAuthorized(false);
+  }
   
-// }
-// fetchuser();
-// },[isAuthorized]);
+}
+fetchuser();
+},[isAuthorized]);
 
-//  console.log(user);
+ console.log(user);
   return (
     <>
       <Router>
@@ -63,7 +63,7 @@ const {isAuthorized,setIsAuthorized,user,setUser}=useContext(Context);
           <Route path='/urine-stats' element={<Urine />} />
           <Route path="*" element={<Error />}/>
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
         <Toaster />
       </Router>
       </>

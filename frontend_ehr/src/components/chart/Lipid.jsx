@@ -33,13 +33,17 @@ const LipidLevelChart = () => {
       }
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:4000/lipid", { withCredentials: true });
-                const { TotalCholesterol, LdlCholesterol, HdlCholesterol, Tryglycerides, date, name } = response.data.data;
+                const response = await axios.get(`http://localhost:4000/lipid/${user.name}`, { withCredentials: true });
+                const { totalCholesterol, ldlCholesterol, hdlCholesterol, tryglycerides, date, name } = response.data.data;
                 console.log(response.data.data)
-                setTotalCholesterol(TotalCholesterol);
-                setLdlCholesterol(LdlCholesterol);
-                setHdlCholesterol(HdlCholesterol);
-                setTriglycerides(Tryglycerides);
+                if (!totalCholesterol||!ldlCholesterol||!hdlCholesterol||!tryglycerides||!date) {
+                    toast.error("No data found");
+                    navigateTo('/');
+                }
+                setTotalCholesterol(totalCholesterol);
+                setLdlCholesterol(ldlCholesterol);
+                setHdlCholesterol(hdlCholesterol);
+                setTriglycerides(tryglycerides);
                 setDate(date);
                 setName(name);
             } catch (error) {

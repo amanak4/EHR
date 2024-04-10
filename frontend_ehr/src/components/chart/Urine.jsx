@@ -33,15 +33,18 @@ const UrineReportChart = () => {
       }
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:4000/urine", { withCredentials: true });
-                const { Colour, PH, Ketone, Glucose, Bilirubin, date, name } = response.data.data;
-
-                const convertedKetone = Ketone.map(val => val === "Positive" ? 1 : val === "Negative" ? -1 : 0);
-                const convertedGlucose = Glucose.map(val => val === "Positive" ? 1 : val === "Negative" ? -1 : 0);
-                const convertedBilirubin = Bilirubin.map(val => val === "Positive" ? 1 : val === "Negative" ? -1 : 0);
-
-                setColor(Colour);
-                setPH(PH);
+                const response = await axios.get(`http://localhost:4000/urine/${user.name}`, { withCredentials: true });
+                const { colour, pH, ketone, glucose, bilirubin, date, name } = response.data.data;
+                      if(!color || !pH || !ketone || !glucose || !bilirubin || !date){
+                        toast.error("No data found");
+                        navigateTo('/');
+                      }
+                const convertedKetone = ketone.map(val => (val === "Positive" || val === 1) ? 1 : (val === "Negative" || val === -1) ? -1 : 0);
+                const convertedGlucose = glucose.map(val => (val === "Positive" || val === 1) ? 1 : (val === "Negative" || val === -1) ? -1 : 0);
+                const convertedBilirubin = bilirubin.map(val => (val === "Positive" || val === 1) ? 1 : (val === "Negative" || val === -1) ? -1 : 0);
+                
+                setColor(colour);
+                setPH(pH);
                 setKetone(convertedKetone);
                 setGlucose(convertedGlucose);
                 setBilirubin(convertedBilirubin);

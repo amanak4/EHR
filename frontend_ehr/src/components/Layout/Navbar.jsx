@@ -36,9 +36,9 @@ function Navbar() {
           }
     console.log(path);
 
-    return (
-        <div>
-      <>
+    return (<>
+        {path==='/login'||path==='/register'?<div></div>:<div>
+      
         <nav>
             <div className='nav_container'>
                 <div className='logo'>
@@ -84,9 +84,10 @@ function Navbar() {
                      }  </div>
             </div>
         </nav>
-    </>
+  
         
-        </div>
+        </div>}
+          </>
     )
 }
 

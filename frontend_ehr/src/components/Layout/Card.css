@@ -11,6 +11,7 @@
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
+
   font-family: 'Montserrat', sans-serif; /* Apply Montserrat font family */
 }
 
@@ -20,6 +21,7 @@
 .card-text-price {
     font-weight: bold;
     font-size: 1.1rem; 
+    color: white;
   }
 
 .custom-card-img {
@@ -38,13 +40,13 @@
 .custom-card .card-title {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #333;
+  color:white;
   margin-bottom: 10px;
 }
 
 .custom-card .card-text {
   font-size: 1rem;
-  color: #555;
+  color: white;
   margin-bottom: 15px;
   line-height: 1.5;
 }
