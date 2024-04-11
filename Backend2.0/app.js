@@ -17,7 +17,7 @@ const DATABASE_URL = process.env.DATABASE_URL;
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors({
-  origin:"https://ehr-orpin.vercel.app",
+  origin:"https://ehr-1-gk0j.onrender.com",
   methods:["GET","POST","PUT","DELETE"],
   credentials:true,
 }));
