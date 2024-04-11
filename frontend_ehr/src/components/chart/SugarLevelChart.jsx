@@ -30,7 +30,7 @@ const SugarLevelChart = () => {
       }
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/sugar/${user.name}`, { withCredentials: true });
+                const response = await axios.get(`https://ehr-k9yx.onrender.com/sugar/${user.name}`, { withCredentials: true });
                 console.log("data",response.data.data);
                 
                 const { fastingSugar, randomSugar, date, name } = response.data.data;

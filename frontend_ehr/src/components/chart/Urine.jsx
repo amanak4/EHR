@@ -33,7 +33,7 @@ const UrineReportChart = () => {
       }
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/urine/${user.name}`, { withCredentials: true });
+                const response = await axios.get(`https://ehr-k9yx.onrender.com/urine/${user.name}`, { withCredentials: true });
                 const { colour, pH, ketone, glucose, bilirubin, date, name } = response.data.data;
                       if(!color || !pH || !ketone || !glucose || !bilirubin || !date){
                         toast.error("No data found");

@@ -31,7 +31,7 @@ function Register() {
 try{
   console.log("mja");
   console.log("email",email);
-    const {data}=await axios.post("http://localhost:4000/register",{email,password,name},{withCredentials:true,
+    const {data}=await axios.post("https://ehr-k9yx.onrender.com/register",{email,password,name},{withCredentials:true,
   headers:{
     "Content-Type":"application/json",
   },});

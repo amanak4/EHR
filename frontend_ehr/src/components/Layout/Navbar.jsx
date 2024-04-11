@@ -15,7 +15,7 @@ function Navbar() {
     // const navigateTo = useNavigate();
     const handleLogout = async () => {
       try{
-         const { data }=await axios.get("http://localhost:4000/logout",{withCredentials:true});
+         const { data }=await axios.get("https://ehr-k9yx.onrender.com/logout",{withCredentials:true});
       console.log("mj",data);
         if(data.message){
           toast.success(data.message);

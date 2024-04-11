@@ -33,7 +33,7 @@ const LipidLevelChart = () => {
       }
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/lipid/${user.name}`, { withCredentials: true });
+                const response = await axios.get(`https://ehr-k9yx.onrender.com/lipid/${user.name}`, { withCredentials: true });
                 const { totalCholesterol, ldlCholesterol, hdlCholesterol, tryglycerides, date, name } = response.data.data;
                 console.log(response.data.data)
                 if (!totalCholesterol||!ldlCholesterol||!hdlCholesterol||!tryglycerides||!date) {

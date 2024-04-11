@@ -53,7 +53,7 @@ randomLipid.forEach(lipidEntry => {
   // const datamunna=JSON.stringify(postData);
 
 const fxndata=async()=>{
-  const response= await axios.post(`http://localhost:4000/lipid`,postData,{withCredentials:true,
+  const response= await axios.post(`https://ehr-k9yx.onrender.com/lipid`,postData,{withCredentials:true,
   headers:{
     "Content-Type":"application/json",
   },});
@@ -77,7 +77,7 @@ randomBp.forEach(bpEntry => {
   };
 
   const fxndata=async()=>{
-    await axios.post(`http://localhost:4000/hearthealth`, postData)
+    await axios.post(`https://ehr-k9yx.onrender.com/hearthealth`, postData)
     .then(response => {
       console.log('Blood pressure (bp) data posted successfully:', response.data);
     })
@@ -105,7 +105,7 @@ randomUrine.forEach(urineEntry => {
     date: urineEntry.date
   };
 const fxndata=async()=>{
-  await axios.post(`http://localhost:4000/urine`, postData)
+  await axios.post(`https://ehr-k9yx.onrender.com/urine`, postData)
     .then(response => {
       console.log('Urine data posted successfully:', response.data);
     })
@@ -130,7 +130,7 @@ randomSugar.forEach(sugarEntry => {
     date: sugarEntry.date
   };
 const fxndata=async()=>{
- await  axios.post(`http://localhost:4000/sugar`, postData)
+ await  axios.post(`https://ehr-k9yx.onrender.com/sugar`, postData)
     .then(response => {
       console.log('Sugar data posted successfully:', response.data);
     })

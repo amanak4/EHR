@@ -25,7 +25,7 @@ const {isAuthorized,setIsAuthorized,user,setUser}=useContext(Context);
 
 useEffect(()=>{
   const fetchuser =async()=>{
-   try{ const response=await axios.get("http://localhost:4000/getuser",{withCredentials:true});
+   try{ const response=await axios.get("https://ehr-k9yx.onrender.com/getuser",{withCredentials:true});
    console.log(response);
    if(response.data.message){
     setUser(response.data.user);

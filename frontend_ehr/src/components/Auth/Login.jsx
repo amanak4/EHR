@@ -30,7 +30,7 @@ function Login() {
       e.preventDefault();
 try{
   console.log("mja");
-   const {data}=await axios.post("http://localhost:4000/login",{email,password},{withCredentials:true,
+   const {data}=await axios.post("https://ehr-k9yx.onrender.com/login",{email,password},{withCredentials:true,
   headers:{
     "Content-Type":"application/json",
   },});

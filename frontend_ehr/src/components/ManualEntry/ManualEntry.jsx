@@ -50,7 +50,7 @@ const postManualEntry = async (e) => {
 
   switch (disease.toLowerCase()) {
     case "sugar":
-      url = "http://localhost:4000/sugar";
+      url = "https://ehr-k9yx.onrender.com/sugar";
       postData = {
         fastingSugar: fastingSugarData,
         randomSugar: randomSugarData,
@@ -59,7 +59,7 @@ const postManualEntry = async (e) => {
       };
       break;
     case "bp":
-      url = "http://localhost:4000/hearthealth";
+      url = "https://ehr-k9yx.onrender.com/hearthealth";
       postData = {
         systolicBP: systolicBPData,
         diastolicBP: diastolicBPData,
@@ -69,7 +69,7 @@ const postManualEntry = async (e) => {
       };
       break;
     case "urine":
-      url = "http://localhost:4000/urine";
+      url = "https://ehr-k9yx.onrender.com/urine";
       postData = {
         colour: urineColor,
         pH: urinepH,
@@ -81,7 +81,7 @@ const postManualEntry = async (e) => {
       };
       break;
     case "lipid":
-      url = "http://localhost:4000/lipid";
+      url = "https://ehr-k9yx.onrender.com/lipid";
       postData = {
         totalCholesterol: totalCholesterol,
         ldlCholesterol: ldlCholesterol,
