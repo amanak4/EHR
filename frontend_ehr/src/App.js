@@ -36,6 +36,7 @@ useEffect(()=>{
    }
   }
 catch(error){
+  toast.error(error.response.data);
     setIsAuthorized(false);
   }
   

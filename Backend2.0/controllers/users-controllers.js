@@ -93,7 +93,7 @@ export const register = async (req, res, next) =>{
     token = jwt.sign(
       { email: createdUser.email ,
       name: createdUser.name,},
-      'dont_share_token',
+      process.env.JWT_KEY,
       { expiresIn: '1h' }
     );
 
@@ -160,7 +160,7 @@ res.json({
     token = jwt.sign(
       {  email: existingUser.email ,
         name: existingUser.name,},
-      'dont_share_token',
+      process.env.JWT_KEY,
       { expiresIn: '1h' }
     );
   } catch (err) {
