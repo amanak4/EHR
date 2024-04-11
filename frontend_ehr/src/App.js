@@ -23,30 +23,31 @@ import BookATest from './components/BookATest/BookATest.jsx';
 const App =()=>{
 const {isAuthorized,setIsAuthorized,user,setUser}=useContext(Context);
 const navigateTo=useNavigate();
-useEffect(()=>{
-  const fetchuser =async()=>{
-   try{ const response=await axios.get("https://ehr-k9yx.onrender.com/getuser",{withCredentials:true});
-   console.log(response);
-   if(response.data.user){
-    setUser(response.data.user);
-    setIsAuthorized(true);
-   }else if(response.data.error){
-    toast.error(response.data.error);
-    setIsAuthorized(false);
-   }
-  }
-catch(error){
-  toast.error(error.response.data);
-    setIsAuthorized(false);
-  }
-  
-}
-fetchuser();
-},[isAuthorized]);
-
 if(!isAuthorized) {
   navigateTo("/login");
 }
+// useEffect(()=>{
+//   const fetchuser =async()=>{
+//    try{ const response=await axios.get("https://ehr-k9yx.onrender.com/getuser",{withCredentials:true});
+//    console.log(response);
+//    if(response.data.user){
+//     setUser(response.data.user);
+//     setIsAuthorized(true);
+//    }else if(response.data.error){
+//     toast.error(response.data.error);
+//     setIsAuthorized(false);
+//    }
+//   }
+// catch(error){
+//   toast.error(error.response.data);
+//     setIsAuthorized(false);
+//   }
+  
+// }
+// fetchuser();
+// },[isAuthorized]);
+
+
  console.log(user);
   return (
     <>
