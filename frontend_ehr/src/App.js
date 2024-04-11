@@ -22,7 +22,7 @@ import Urine from './components/chart/Urine.jsx';
 import BookATest from './components/BookATest/BookATest.jsx';
 const App =()=>{
 const {isAuthorized,setIsAuthorized,user,setUser}=useContext(Context);
-
+const navigateTo=useNavigate();
 useEffect(()=>{
   const fetchuser =async()=>{
    try{ const response=await axios.get("https://ehr-k9yx.onrender.com/getuser",{withCredentials:true});
@@ -44,6 +44,9 @@ catch(error){
 fetchuser();
 },[isAuthorized]);
 
+if(!isAuthorized) {
+  navigateTo("/login");
+}
  console.log(user);
   return (
     <>
