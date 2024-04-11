@@ -37,8 +37,8 @@ function Navbar() {
     console.log(path);
 
     return (<>
-        {path==='/login'||path==='/register'?<div></div>:<div>
-      
+        {/* {path==='/login'||path==='/register'?<div></div>:<div> */}
+      <div>
         <nav>
             <div className='nav_container'>
                 <div className='logo'>
@@ -86,7 +86,7 @@ function Navbar() {
         </nav>
   
         
-        </div>}
+        </div>
           </>
     )
 }

@@ -44,7 +44,7 @@ const {isAuthorized,setIsAuthorized,user,setUser}=useContext(Context);
 // },[isAuthorized]);
 
 
- console.log(user);
+//  console.log(user);
   return (
     <>
       <Router>
