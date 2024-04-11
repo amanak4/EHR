@@ -27,7 +27,7 @@ useEffect(()=>{
   const fetchuser =async()=>{
    try{ const response=await axios.get("https://ehr-k9yx.onrender.com/getuser",{withCredentials:true});
    console.log(response);
-   if(response.data.message){
+   if(response.data.user){
     setUser(response.data.user);
     setIsAuthorized(true);
    }else if(response.data.error){
